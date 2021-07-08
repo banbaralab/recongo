@@ -19,13 +19,13 @@ def print_result(str):
 
 def main(prg):
     SOLVER_NAME = 'CoRe_solver'
-    VERSION = '0.1.0'
+    SOLVER_VERSION = '0.1.0'
 
     core_min   = get(prg.get_const("core_min"), clingo.Number(0))
     core_max   = prg.get_const("core_max")
     core_stop  = get(prg.get_const("core_stop"), clingo.String("SAT"))
 
-    print_comment('%s version %s' % (SOLVER_NAME, VERSION))
+    print_comment('%s version %s' % (SOLVER_NAME, SOLVER_VERSION))
     print_comment('author: Yuya Yamada, Kentaro Yamada, Mutsunori Banbara')
 
     step, ret = 0, None
