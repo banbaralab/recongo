@@ -30,7 +30,7 @@ def main(prg):
 
     step, ret = 0, None
     while ((core_max is None or step <= core_max.number) and
-            (step == 0 or 
+            (step == 0 or step < core_min or
             (core_stop.string == "SAT" and not ret.satisfiable) or
             (core_stop.string == "UNSAT" and not ret.unsatisfiable))):
         
