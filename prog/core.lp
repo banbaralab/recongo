@@ -25,7 +25,8 @@ def main(prg):
     core_max   = prg.get_const("core_max")
     core_stop  = get(prg.get_const("core_stop"), clingo.String("SAT"))
 
-    print_comment('%s version %s' % (SOLVER_NAME, SOLVER_VERSION))
+    print_comment('%s: an ASP-based CoRe Solver' % SOLVER_NAME)
+    print_comment('version: %s' % SOLVER_VERSION)
     print_comment('author: Yuya Yamada, Kentaro Yamada, Mutsunori Banbara')
 
     step, ret = 0, None
