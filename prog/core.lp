@@ -48,14 +48,14 @@ def main(prg):
         ret, step = prg.solve(), step+1
 
     print_comment('step: %s' % str(step-1))
-    if core_stop.string == "SAT":
-        if ret.satisfiable:
-            print_result('REACHABLE')
-        elif ret.unsatisfiable and step == core_max.number + 1:
-            print_result('UNREACHABLE')
-        else:
-            print_result('UNKNOWN')
-#    elif istop.string == "UNSAT":
+
+    if (step != 0 and step >= core_min and
+        (core_stop.string != "SAT" or ret.satisfiable) and
+        (core_stop.string != "UNSAT" or ret.unsatisfiable)):
+         print_result('REACHABLE')
+    else:
+        print_result('UNREACHABLE')
+
 #end.
 
 #program check(t).
