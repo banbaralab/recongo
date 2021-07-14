@@ -18,7 +18,7 @@ def print_result(str):
     print_message(['s', str])
 
 def main(prg):
-    SOLVER_NAME = 'CoRe_solver'
+    SOLVER_NAME = 'recongo'
     SOLVER_VERSION = '0.1.0'
 
     core_min   = get(prg.get_const("core_min"), clingo.Number(0))
@@ -52,7 +52,7 @@ def main(prg):
     if (step != 0 and step >= core_min.number and
         (core_stop.string != "SAT" or ret.satisfiable) and
         (core_stop.string != "UNSAT" or ret.unsatisfiable)):
-         print_result('REACHABLE')
+        print_result('REACHABLE')
     else:
         print_result('UNREACHABLE')
 
