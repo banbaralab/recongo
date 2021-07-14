@@ -31,7 +31,7 @@ def main(prg):
 
     step, ret = 0, None
     while ((core_max is None or step <= core_max.number) and
-            (step == 0 or step < core_min or
+            (step == 0 or step < core_min.number or
             (core_stop.string == "SAT" and not ret.satisfiable) or
             (core_stop.string == "UNSAT" and not ret.unsatisfiable))):
         
@@ -49,7 +49,7 @@ def main(prg):
 
     print_comment('step: %s' % str(step-1))
 
-    if (step != 0 and step >= core_min and
+    if (step != 0 and step >= core_min.number and
         (core_stop.string != "SAT" or ret.satisfiable) and
         (core_stop.string != "UNSAT" or ret.unsatisfiable)):
          print_result('REACHABLE')
