@@ -19,7 +19,7 @@ def print_result(str):
 
 def main(prg):
     SOLVER_NAME = 'recongo'
-    SOLVER_VERSION = '0.1.0'
+    SOLVER_VERSION = '0.1.1'
 
     core_min   = get(prg.get_const("core_min"), clingo.Number(0))
     core_max   = prg.get_const("core_max")
@@ -36,15 +36,15 @@ def main(prg):
             (core_stop.string == "UNSAT" and not ret.unsatisfiable))):
         
         parts = []
-        parts.append(("check", [step]))
-        parts.append(("step", [step]))
+        parts.append(("check", [clingo.Number(step)]))
+        parts.append(("step", [clingo.Number(step)]))
         if step > 0:
-            prg.release_external(clingo.Function("query", [step-1]))
+            prg.release_external(clingo.Function("query", [clingo.Number(step-1)]))
             prg.cleanup()
         else:
             parts.append(("base", []))
         prg.ground(parts)
-        prg.assign_external(clingo.Function("query", [step]), True)
+        prg.assign_external(clingo.Function("query", [clingo.Number(step)]), True)
         ret, step = prg.solve(), step+1
 
     print_comment('step: %s' % str(step-1))
