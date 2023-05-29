@@ -13,6 +13,11 @@ Recongo output a shortest solution if reachable, otherwise recongo will not stop
 Please use option `-h` (`--help`) to see more detail.
 ```
 $ python solver/recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/original/isrp-ex.lp benchmark/isrp/original/isrp-ex_01.lp
+```
+
+<details><summary>Output example</summary>
+
+```
 recongo version 0.3 (compet 2023 version)
 Reading from encoding/isrp/isrpTJ_ex1_basic_inc.lp ...
 c Step: 0
@@ -40,6 +45,8 @@ Calls        : 4
 Time         : 0.006s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
 CPU Time     : 0.005s
 ```
+
+</details>
 
 ## Directory
 ### benchmark
