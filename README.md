@@ -9,8 +9,7 @@ ASP solver.
 
 ## Execution example
 The following is a basical command.
-Recongo output a shortest solution if reachable, otherwise recongo will not stop.
-Please use option `-h` (`--help`) to see more detail.
+Recongo output a shortest solution if reachable, otherwise, namely unreachable, recongo will not stop.
 ```
 $ python solver/recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/original/isrp-ex.lp benchmark/isrp/original/isrp-ex_01.lp
 ```
@@ -48,13 +47,55 @@ CPU Time     : 0.005s
 
 </details>
 
+If you want to solve unreachable instances, you can use `--imax` option.
+Recongo will output unreachable when there are no reconfiguration sequence where the length from 0 to $ imax - 1 $.
+The following is an example.
+```
+python solver/recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
+```
+
+<details><summary>Output Example</summary>
+
+```
+recongo version 0.3 (compet 2023 version)
+Reading from encoding/isrp/isrpTJ_ex1_basic_inc.lp ...
+c Step: 0
+Solving...
+c Result: UNSAT
+c Step: 1
+Solving...
+c Result: UNSAT
+c Step: 2
+Solving...
+c Result: UNSAT
+c Step: 3
+Solving...
+c Result: UNSAT
+c Step: 4
+Solving...
+c Result: UNSAT
+c Step: 5
+Solving...
+c Result: UNSAT
+s UNREACHABLE
+a Step: -1 
+
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 6
+Time         : 0.008s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.006s
+```
+
+</details>
+
+Please use option `-h` (`--help`) to see more detail.
+
 ## Directory
 ### benchmark
-- The benchmark sets of small insctances. There are some CRPs like
-  Independent Set Reconfiguration Problems (ISRPs) and so on.
-
-### bin
-
+- You can get the benchmark sets of small insctances. There are some CRPs like
+  Independent Set Reconfiguration Problems (ISRPs).
 
 ### encoding
 - You can get the ASP encodings for solving each CRP.
