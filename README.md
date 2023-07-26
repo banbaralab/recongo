@@ -11,7 +11,7 @@ ASP solver.
 The following is a basical command.
 Recongo output a shortest solution if reachable, otherwise, namely unreachable, recongo will not stop.
 ```
-$ python solver/recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/original/isrp-ex.lp benchmark/isrp/original/isrp-ex_01.lp
+$ python recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/original/isrp-ex.lp benchmark/isrp/original/isrp-ex_01.lp
 ```
 
 <details><summary>Output example</summary>
@@ -51,7 +51,7 @@ If you want to solve unreachable instances, you can use `--imax` option.
 Recongo will output unreachable when there are no reconfiguration sequence where the length from 0 to $ imax - 1 $.
 The following is an example.
 ```
-python solver/recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
+python recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
 ```
 
 <details><summary>Output Example</summary>
