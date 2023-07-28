@@ -1,7 +1,8 @@
 # recongo
-Recongo is a solver for solving Combinatorial Reconfiguration Problems (CRPs)
-with Answer Set Programming (ASP). As a backend solver, we use clingo, a high-speed
-ASP solver.
+Recongo is a solver for solving Combinatorial Reconfiguration
+Problems (CRPs) based on the bounded combinatorial
+reconfiguration with Answer Set Programming (ASP).
+As a backend solver, we use clingo, a high-speed ASP solver.
 
 ## Requirements
 - python3 (version 3.8.3 or higher)
@@ -11,7 +12,7 @@ ASP solver.
 The following is a basical command.
 Recongo output a shortest solution if reachable, otherwise, namely unreachable, recongo will not stop.
 ```
-$ python recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/original/isrp-ex.lp benchmark/isrp/original/isrp-ex_01.lp
+$ python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_inc.lp example/isrp/benchmark/original/isrp-ex.lp example/isrp/benchmark/original/isrp-ex_01.lp
 ```
 
 <details><summary>Output example</summary>
@@ -51,7 +52,7 @@ If you want to solve unreachable instances, you can use `--imax` option.
 Recongo will output unreachable when there are no reconfiguration sequence where the length from 0 to $ imax - 1 $.
 The following is an example.
 ```
-python recongo.py encoding/isrp/isrpTJ_ex1_basic_inc.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01.lp benchmark/isrp/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
+python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_inc.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyno-01.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
 ```
 
 <details><summary>Output Example</summary>
@@ -93,20 +94,9 @@ CPU Time     : 0.006s
 Please use option `-h` (`--help`) to see more detail.
 
 ## Directory
-### benchmark
-- You can get the benchmark sets of small insctances. There are some CRPs like
-  Independent Set Reconfiguration Problems (ISRPs).
-
-### encoding
-- You can get the ASP encodings for solving each CRP.
-
-### old_recongo
-- Recongo in this directory was uesd in CoRe Challenge 2022.
-  Be careful, we will not update this recongo.
-
-### solver
-- There are files for running recongo.
-  We strongly recommend using this recongo (not `old_recongo`)
+Please see README in each directory for the details.
+### example
+- In this directory, there are benchmarks, encodings and utility programs for some combinatorial reconfiguration problems.
 
 ## Known issues
 - Recongo somtimes output nothing in signal interrupted.
