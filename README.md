@@ -6,13 +6,13 @@ As a backend solver, we use clingo, a high-speed ASP solver.
 
 ## Requirements
 - python3 (version 3.8.3 or higher)
-- [clingo](https://potassco.org/clingo/) (version XXX or higher)
+- [clingo](https://potassco.org/clingo/) (version 5.6.2 or higher)
 
 ## Execution example
 The following is a basical command.
 Recongo output a shortest solution if reachable, otherwise, namely unreachable, recongo will not stop.
 ```
-$ python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_nohints_inc.lp example/isrp/benchmark/original/isrp-ex.lp example/isrp/benchmark/original/isrp-ex_01.lp
+python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_nohints_inc.lp example/isrp/benchmark/original/isrp-ex.lp example/isrp/benchmark/original/isrp-ex_01.lp
 ```
 
 <details><summary>Output example</summary>
