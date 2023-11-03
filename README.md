@@ -1,14 +1,23 @@
 # recongo
+## Introduction
 Recongo is a solver for solving Combinatorial Reconfiguration
 Problems (CRPs) based on the bounded combinatorial
 reconfiguration with Answer Set Programming (ASP).
-As a backend solver, we use clingo, a high-speed ASP solver.
+As a back-end solver, we use clingo, a high-speed ASP solver.
+
+### <span style="color: ##F06060;">Award</span>
+- [CoRe Challenge 2022](https://core-challenge.github.io/2022result/):
+  Recongo was ranked 1st on Single-engine Solvers shortest track,
+  and 2nd or 3rd on 5 Solvers metrices.
+- [CoRe Challenge 2023](https://core-challenge.github.io/2023result/):
+  Recongo was ranked 1st on 5 metrics and 2nd on 7 metrics: out of 12!
 
 ## Requirements
 - python3 (version 3.8.3 or higher)
 - [clingo](https://potassco.org/clingo/) (version 5.6.2 or higher)
 
 ## Execution example
+### Simplest command
 The following is a basical command.
 Recongo output a shortest solution if reachable, otherwise, namely unreachable, recongo will not stop.
 ```
@@ -48,6 +57,7 @@ CPU Time     : 0.005s
 
 </details>
 
+### For unreachable instances
 If you want to solve unreachable instances, you can use `--imax` option.
 Recongo will output unreachable when there are no reconfiguration sequence where the length from 0 to $ imax - 1 $.
 The following is an example.
