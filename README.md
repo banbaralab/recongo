@@ -5,7 +5,7 @@ Problems (CRPs) based on the bounded combinatorial
 reconfiguration with Answer Set Programming (ASP).
 As a back-end solver, we use clingo, a high-speed ASP solver.
 
-### Award
+### Awards
 - [CoRe Challenge 2022](https://core-challenge.github.io/2022result/):
   Recongo was ranked 1st on Single-engine Solvers shortest track,
   and 2nd or 3rd on 5 Solvers metrices.
