@@ -177,3 +177,5 @@ Please see README in each directory for the details.
 - [CoRe Challenge 2022](https://core-challenge.github.io/2022/)
   - You can get more ISRP instances.
 - [CoRe Challenge 2023](https://core-challenge.github.io/2023/)
+- [hcr](https://github.com/banbaralab/hcr)
+  - You can get a benchmark set and ASP encodings of Hamiltonian cycle problems a Hamiltonian cycle reconfiguration problems.
