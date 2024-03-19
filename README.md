@@ -59,11 +59,12 @@ CPU Time     : 0.005s
 
 ### For unreachable instances
 If you want to solve unreachable instances, you can use `--imax` option.
-Recongo will output unreachable when there are no reconfiguration sequence where the length from 0 to $ imax - 1 $.
+Recongo will output unreachable when there are no reconfiguration sequence where the length is from 0 to $ imax - 1 $.
 The following is an example.
 ```
 python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_nohints_inc.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyno-01.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
 ```
+In this case, we give the number of independent sets, i.e. feasible solutions, of `hc-toyno-01` as the value of `imax`, namely six.
 
 <details><summary>Output Example</summary>
 
@@ -97,6 +98,67 @@ Models       : 0
 Calls        : 6
 Time         : 0.008s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
 CPU Time     : 0.006s
+```
+
+</details>
+
+### For longest problems
+In a international competition CoRe Challenge 2022 and 2023,
+there is a metric for solving longest CRPs (see below links).
+We can solve this problem by using a `--isearch` option as like a following example.
+```
+python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_noloop_d1d2h_inc.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyyes-01.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyyes-01_01.lp --isearch=longest --imax=8
+```
+The option enforce to unstop even if recongo find reconfiguration sequences.
+Thus, we reccomend that you use the `imax` option.
+
+<details><summary>Output Example</summary>
+
+```
+recongo version 0.3 (compet 2023 version)
+Reading from ...g/isrpTJ_ex1_basic_noloop_d1d2h_inc.lp ...
+c Step: 0
+Solving...
+c Result: UNSAT
+c Step: 1
+Solving...
+c Result: UNSAT
+c Step: 2
+Solving...
+c Result: UNSAT
+c Step: 3
+Solving...
+Answer: 1
+goal(4) goal(5) goal(7) start(3) start(6) start(7) in(7,0) in(3,0) in(6,0) in(7,1) in(6,1) in(1,1) in(5,2) in(7,2) in(1,2) in(4,3) in(5,3) in(7,3)
+c Result: SAT
+c Step: 4
+Solving...
+Answer: 1
+goal(4) goal(5) goal(7) start(3) start(6) start(7) in(7,0) in(3,0) in(6,0) in(7,1) in(6,1) in(1,1) in(4,2) in(7,2) in(1,2) in(5,3) in(7,3) in(1,3) in(4,4) in(5,4) in(7,4)
+c Result: SAT
+c Step: 5
+Solving...
+Answer: 1
+goal(4) goal(5) goal(7) start(3) start(6) start(7) in(7,0) in(3,0) in(6,0) in(7,1) in(6,1) in(1,1) in(5,2) in(7,2) in(1,2) in(4,3) in(7,3) in(1,3) in(4,4) in(5,4) in(1,4) in(4,5) in(5,5) in(7,5)
+c Result: SAT
+c Step: 6
+Solving...
+Answer: 1
+goal(4) goal(5) goal(7) start(3) start(6) start(7) in(7,0) in(3,0) in(6,0) in(7,1) in(6,1) in(1,1) in(4,2) in(7,2) in(1,2) in(5,3) in(7,3) in(1,3) in(4,4) in(5,4) in(1,4) in(4,5) in(5,5) in(2,5) in(4,6) in(5,6) in(7,6)
+c Result: SAT
+c Step: 7
+Solving...
+c Result: UNSAT
+a Answer: start(3) start(6) start(7) in(3,0) in(6,0) in(7,0) in(1,1) in(6,1) in(7,1) in(1,2) in(4,2) in(7,2) in(1,3) in(5,3) in(7,3) in(1,4) in(4,4) in(5,4) in(2,5) in(4,5) in(5,5) in(4,6) in(5,6) in(7,6) goal(4) goal(5) goal(7)
+s REACHABLE
+a Step: 6 
+
+UNSATISFIABLE
+
+Models       : 4
+Calls        : 8
+Time         : 0.015s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.015s
 ```
 
 </details>
