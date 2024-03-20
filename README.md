@@ -6,10 +6,10 @@ reconfiguration with Answer Set Programming (ASP).
 As a back-end solver, we use clingo, a high-speed ASP solver.
 
 ### Awards
-- [CoRe Challenge 2022](https://core-challenge.github.io/2022result/):
+- [CoRe Challenge 2022 result](https://core-challenge.github.io/2022result/):
   Recongo was ranked 1st on Single-engine Solvers shortest track,
   and 2nd or 3rd on 5 Solvers metrices.
-- [CoRe Challenge 2023](https://core-challenge.github.io/2023result/):
+- [CoRe Challenge 2023 result](https://core-challenge.github.io/2023result/):
   Recongo was ranked 1st on 5 metrics and 2nd on 7 metrics: out of 12!
 
 ## Requirements
