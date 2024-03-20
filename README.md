@@ -59,7 +59,7 @@ CPU Time     : 0.005s
 
 ### For unreachable instances
 If you want to solve unreachable instances, you can use `--imax` option.
-Recongo will output unreachable when there are no reconfiguration sequence where the length is from 0 to $ imax - 1 $.
+Recongo will output unreachable when there are no reconfiguration sequence where the length is from 0 to (the value of `imax`) $- 1$.
 The following is an example.
 ```
 python recongo.py example/isrp/encoding/isrpTJ_ex1_basic_nohints_inc.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyno-01.lp example/isrp/benchmark/core_challenge2022_1st-benchmark/hc-toyno-01_01.lp --imax=6
